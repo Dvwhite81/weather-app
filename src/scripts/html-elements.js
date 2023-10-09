@@ -11,7 +11,7 @@ const startLoadingAnimation = () => {
         main.style.display = "grid";
         animationDiv.innerHTML = "";
         animationDiv.style.display = "none";
-    }, 2000);
+    }, 1000);
   }
 
 const buildCurrentSection = (cityName, temp, description, iconUrl) => {
@@ -22,13 +22,15 @@ const buildCurrentSection = (cityName, temp, description, iconUrl) => {
 
   const currentResults = buildElement("div", { className: "current-results" });
   const nameEl = buildElement("h2", { id: "city-name", textContent: cityName });
+  const tempDiv = buildElement('div', { className: 'icon-temp-div' });
   const tempEl = buildElement("h3", { id: "current-temp", textContent: temp });
+  const iconEl = buildElement("img", { id: "current-icon", src: iconUrl });
+  tempDiv.append(tempEl, iconEl);
   const descriptionEl = buildElement("p", {
     id: "current-description",
     textContent: description,
   });
-  const iconEl = buildElement("img", { id: "current-icon", src: iconUrl });
-  currentResults.append(nameEl, tempEl, descriptionEl, iconEl);
+  currentResults.append(nameEl, tempDiv, descriptionEl);
   main.append(currentResults);
 };
 
@@ -51,6 +53,7 @@ const buildTomorrowSection = (timeName, temp, description, iconUrl) => {
     className: "forecast-name",
     textContent: timeName,
   });
+  const tempDiv = buildElement('div', { className: 'icon-temp-div' });
   const tempEl = buildElement("h5", {
     className: "forecast-temp",
     textContent: temp,
@@ -63,7 +66,8 @@ const buildTomorrowSection = (timeName, temp, description, iconUrl) => {
     className: "current-icon",
     src: iconUrl,
   });
-  forecastResults.append(nameEl, tempEl, descriptionEl, iconEl);
+  tempDiv.append(tempEl, iconEl);
+  forecastResults.append(nameEl, tempDiv, descriptionEl);
   tmwSection.append(forecastResults);
   endLoadingAnimation();
 };

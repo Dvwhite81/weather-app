@@ -64,6 +64,17 @@
   width: 30%;
 }
 
+.icon-temp-div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#current-description,
+.forecast-description {
+  margin: 0 auto 1rem auto;
+}
+
 .animation-div {
   background: url("https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif") center no-repeat;
   display: none;
