@@ -1,4 +1,4 @@
-import { getInput } from "./js/parsing-functions";
+import { getInput } from "./parsing-functions";
 
 const initialSetup = () => {
   // Wait until after animation to change background color

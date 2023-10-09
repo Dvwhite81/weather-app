@@ -1,5 +1,5 @@
 .container {
-  background: url(/src/images/top-view-water-texture-wallpaper.jpg);
+  background: url('/public/assets/images/top-view-water-texture-wallpaper.jpg');
   background-size: cover;
   display: grid;
   grid-template-rows: 10% 90%;
